@@ -5,16 +5,40 @@ import LeaderBoard from "./LeaderBoard.vue"
 </script>
 
 
+
 <script>
+const scaledTimes = [...new Array(100)].map((v, i) => {return i / 100});
+
+import * as Realm from "realm-web";
+
+// Add your App ID
+const app = new Realm.App({ id: 'data-eetjq' });
+
+async function loginApiKey(apiKey) {
+  // Create an API Key credential
+  const credentials = Realm.Credentials.apiKey(apiKey);
+  // Authenticate the user
+  const user = await app.logIn(credentials);
+  return user;
+}
+
+const user = await loginApiKey("rS6YEkfv9oSL0xWR7eK8kUG6CpiIBN3YYQrscvsyyxC3e8pTYU13MhD0nzxnOE7Z"); // add previously generated API key
+const mongo = app.currentUser.mongoClient("Cluster0");
+const collection = mongo.db("Cluster0").collection("races");
+
+const race = await collection.findOne();
+
+
+
 let players = [{
     name: "joel bargiglio00000000000000",
     times: [0,.2,.5, 1],
-    distances: [0, .01, .5, 1],
+    distances: [0, .01, .5, 0.7],
     color:"#ffff00"
 },
 {
     name: "j90l bidon",
-    times: [0,.6,1],
+    times: [0,.6, 1],
     distances: [0, .7, 1],
     color:"#00FF00"
 
