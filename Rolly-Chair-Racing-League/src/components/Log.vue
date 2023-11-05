@@ -11,7 +11,9 @@ const props =defineProps({
 <template>
     <div id="log-container" class="race-panel">
         <div class="box" >
-
+            <div id="message-container">
+                <p style="width: 100%; background: #00000099;">HElp</p>
+            </div>
         </div>
     </div>
 </template>
@@ -22,6 +24,8 @@ const props =defineProps({
 #log-container{
     height: 80vh;
     width: 35vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .box {
@@ -31,5 +35,11 @@ const props =defineProps({
     height: 100%;
     width: 100%;
     font-family: 'Courier Prime', monospace;
+    display: flex;
+}
+#message-container{
+    margin-top: auto;
+    width: 100%;
+
 }
 </style>

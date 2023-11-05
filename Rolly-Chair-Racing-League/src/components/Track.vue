@@ -63,7 +63,7 @@ const props =defineProps({
 
 <template>
     <div id="track-container" class="race-panel">
-    <svg id="track-window" viewBox="50,0,100,100" height='200' width='350' xmlns="http://www.w3.org/2000/svg">
+    <svg id="track-window" viewBox="10,0,400,400" height='500' width='500' xmlns="http://www.w3.org/2000/svg">
             <path id="track"
             fill="none"
             stroke="lightgrey"
@@ -86,16 +86,16 @@ const props =defineProps({
 
 
 <style scoped lang="scss">
-#track-window{
-    // width: 100%;
-    // height: 100%;
-}
+// #track-window{
+//     // width: 100%;
+//     // height: 100%;
+// }
 
-#track{
-    // width: 100%;
-    // height: 100%;
+// #track{
+//     // width: 100%;
+//     // height: 100%;
     
-}
+// }
 
 #track-container{
     height: auto;

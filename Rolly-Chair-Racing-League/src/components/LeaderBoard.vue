@@ -10,7 +10,8 @@ const props =defineProps({
         <div  id="leaderboard-flexbox" >
             <div v-for="(player, index) in players" class="box" :style="'background-color:' + player.color">
                 <p>
-                <b>{{ index+1 }}.  </b>{{ player.name }}
+               <b style="font-size: 1.2rem;">{{ index+1 }}.  </b>
+                {{ player.name }}
                 </p>
             </div>
         </div>
@@ -21,15 +22,17 @@ const props =defineProps({
 <style scoped lang="scss">
 #leaderboard-container{
     height: 80vh;
-    width: 15vw;
+    width: 25vw;
+    overflow-y: auto;
+
 }
 
-.leaderboard-flexbox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-}
+// #leaderboard-flexbox {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     text-align: center;
+// }
 
 .box {
     text-align: center;
