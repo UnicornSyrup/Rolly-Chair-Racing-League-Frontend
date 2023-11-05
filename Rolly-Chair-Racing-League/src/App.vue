@@ -1,10 +1,12 @@
 <script setup>
 import Race from"./components/Race.vue"
+import Log from "./components/Log.vue"
 </script>
 
 <template>
   <header>
     <Race></Race>
+    <Log></Log>
   </header>
 </template>
 
