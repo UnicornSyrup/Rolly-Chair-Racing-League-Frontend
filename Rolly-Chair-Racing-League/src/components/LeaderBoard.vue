@@ -43,6 +43,11 @@
 .box {
     text-align: center;
     padding: 30px;
+    background: darkslateblue;
+    border-radius: 25px;
+    margin: 15px;
+    font-size: 20px;
+    color: white;
 }
 
 </style>
