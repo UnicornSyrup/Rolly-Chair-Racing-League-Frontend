@@ -72,7 +72,7 @@ const props =defineProps({
 
   <circle v-for="(player, index) in players" r="5" :fill="player.color">
     <animateMotion
-    :dur="'5' + 's'"
+    :dur="'15' + 's'"
     :keyPoints="player.distances.toString().replace(/,/g,';')"
     :keyTimes="player.times.toString().replace(/,/g,';') "
     repeatCount="1"
