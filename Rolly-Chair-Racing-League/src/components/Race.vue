@@ -123,6 +123,7 @@ setInterval(loadRace, 60000);
     <div id="race-container">
         <Track :players="players" :track="tracks[2]"></Track>
         <div id="donors">
+            <h3>Thank you to all of our donors:</h3>
             <p>Joshua Holland</p>
         <p>mishal</p>
         <p>Jasper fam</p>
