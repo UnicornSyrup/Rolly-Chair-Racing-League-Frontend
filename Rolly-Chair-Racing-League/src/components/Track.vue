@@ -10,7 +10,7 @@ const props =defineProps({
 
 <template>
     <div id="track-container" class="race-panel">
-    <svg id="track01" xmlns="http://www.w3.org/2000/svg">
+    <svg id="track"  xmlns="http://www.w3.org/2000/svg">
         <path
         fill="none"
         stroke="lightgrey"
@@ -30,7 +30,7 @@ const props =defineProps({
 </template>
 
 
-<script>
+<!-- <script>
   let svg = document.getElementsByTagName("svg")[0];;
   if(svg)
   {
@@ -45,12 +45,17 @@ const props =defineProps({
   else{
     console.log("why in gods name is this null")
   }
-</script>
+</script> -->
 
 <style scoped>
-#track-container{
-    height: 100%;
+#track{
     width: 100%;
-    border-color: white;
+    height: 100%;
+}
+
+#track-container{
+    height: auto;
+    width: 100%;
+    /* border-color: white; */
 }
 </style>

@@ -11,13 +11,14 @@ import Header from "./components/Header.vue"
     </div>
     <!-- <Footer></Footer> -->
   </div>
-
+  
+  <div id="app-background"></div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<style scoped lang="scss">
+// header {
+//   line-height: 1.5;
+// }
 
 .logo {
   display: block;
@@ -51,6 +52,16 @@ header {
     flex-direction: column;
     background-color: #000000;
   }
+}
+#app-background{
+  position: absolute;
+  z-index: -900;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #000000;
+  display: block;
+  left:0;
+  top:0;
 }
 </style>
 
