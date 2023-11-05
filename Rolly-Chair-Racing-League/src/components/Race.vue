@@ -2,6 +2,8 @@
 import Track from './Track.vue';
 </script>
 
+
+
 <template>
     <div id="race-container">
         <Track></Track>
