@@ -1,7 +1,5 @@
 <script setup>
 import Race from"./components/Race.vue"
-import Log from "./components/Log.vue"
-import LeaderBoard from "./components/LeaderBoard.vue"
 import Header from "./components/Header.vue"
 </script>
 
@@ -10,10 +8,8 @@ import Header from "./components/Header.vue"
     <Header></Header>
     <div id="main-page-flex">
       <Race></Race>
-      <LeaderBoard></LeaderBoard>
-      <Log></Log>
     </div>
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
   </div>
 
 </template>
@@ -45,11 +41,9 @@ header {
     flex-wrap: wrap;
   }
 
-  #main-page-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-  }
+  /* #main-page-flex {
+
+  } */
 
   #main-page {
     display: flex;
@@ -60,12 +54,4 @@ header {
 }
 </style>
 
-<style>
 
-.main-component {
-  background-color: #232323;
-  border: 10px solid black;
-  padding: 20px;
-}
-
-</style>

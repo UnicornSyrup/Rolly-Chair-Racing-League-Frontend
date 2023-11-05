@@ -1,19 +1,18 @@
 <script setup>
+const props =defineProps({
+ events : Array,
+})
+</script>
+
+<script>
+
 </script>
 
 <template>
-    <div id="log-container" class="main-component">
-        <div class="box" id="id1">
-        <p>
-        line 1
-        </p>
-        <p>
-        line 2
-        </p>
+    <div id="log-container" class="race-panel">
+        <div class="box" >
+
         </div>
-        <button type="button"
-        onclick="document.getElementById('id1').innerHTML += '<p>line 3</p>'">
-        Click me to get a new line.</button>
     </div>
 </template>
 
@@ -26,8 +25,9 @@
 }
 
 .box {
-    overflow: scroll;
-    font-size: 12px;
+    overflow-y: scroll;
+    font-size: .75rem;
+    color: white;
     height: 100%;
     width: 100%;
     font-family: 'Courier Prime', monospace;

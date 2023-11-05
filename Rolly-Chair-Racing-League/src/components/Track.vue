@@ -1,33 +1,51 @@
 <script setup>
+const props =defineProps({
+    players : Array,
+    track: String,
+})
+
 </script>
 
+
+
 <template>
-    <div id="track-container">
-    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-    <path
+    <div id="track-container" class="race-panel">
+    <svg id="track01" xmlns="http://www.w3.org/2000/svg">
+        <path
         fill="none"
         stroke="lightgrey"
-        d="m 52.366795,79.888019 c -1.65637,-16.296223 -0.254826,-35.075644 10e-7,-52.749024 0,0 1.146717,-26.37452025 -25.61004,-25.2278003 C -1.3513514e-7,3.0579147 1.5289579,19.876445 1.1467169,25.610035 c -0.38223804,5.73359 9.9234661,37.76819 59.2471081,27.90347 28.66795,-5.73358 36.41079,11.48283 36.69498,18.72973 0.76448,19.49421 -32.108114,36.694975 -44.72201,7.644784 zm 91.737451,227.81466 0.76448,-55.4247 c 0,0 1.146717,-26.37452 -25.61004,-25.2278 -26.756756,1.14672 -25.227798,17.96525 -25.610039,23.69884 -0.382238,5.73359 9.923466,37.76819 59.247108,27.90347 28.66795,-5.73358 36.41079,11.48283 36.69498,18.72973 0.76448,19.49421 -28.28572,44.72201 -45.486489,10.32046 z" />
+        :d="track" />
+    
 
-    <circle r="5" fill="red">
-        <animateMotion
-        dur="10s"
-        repeatCount="indefinite"
-        path="m 52.366795,79.888019 c -1.65637,-16.296223 -0.254826,-35.075644 10e-7,-52.749024 0,0 1.146717,-26.37452025 -25.61004,-25.2278003 C -1.3513514e-7,3.0579147 1.5289579,19.876445 1.1467169,25.610035 c -0.38223804,5.73359 9.9234661,37.76819 59.2471081,27.90347 28.66795,-5.73358 36.41079,11.48283 36.69498,18.72973 0.76448,19.49421 -32.108114,36.694975 -44.72201,7.644784 z0" />
-        <!-- path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" /> -->
-    </circle>
-    <circle r="5" fill="blue">
-        <animateMotion
-        dur="10s"
-        keyPoints="0;0.5;1"
-        keyTimes="0;0.15;1"
-        repeatCount="indefinite"
-        path="m 52.366795,79.888019 c -1.65637,-16.296223 -0.254826,-35.075644 10e-7,-52.749024 0,0 1.146717,-26.37452025 -25.61004,-25.2278003 C -1.3513514e-7,3.0579147 1.5289579,19.876445 1.1467169,25.610035 c -0.38223804,5.73359 9.9234661,37.76819 59.2471081,27.90347 28.66795,-5.73358 36.41079,11.48283 36.69498,18.72973 0.76448,19.49421 -32.108114,36.694975 -44.72201,7.644784 z"/>
-        <!-- path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" /> -->
-    </circle>
-    </svg>
-    </div>
+  <circle v-for="(player, index) in players" r="5" :fill="player.color">
+    <animateMotion
+    :dur="'5' + 's'"
+    :keyPoints="player.distances.toString().replace(/,/g,';')"
+    :keyTimes="player.times.toString().replace(/,/g,';') "
+    repeatCount="1"
+    :path="track" />
+</circle>
+</svg>
+</div>
 </template>
+
+
+<script>
+  let svg = document.getElementsByTagName("svg")[0];;
+  if(svg)
+  {
+      let bb = svg.getBBox();
+      svg.setAttribute("width", bb.width);
+      svg.setAttribute("height", bb.height);
+      svg.setAttribute("transform",
+        "translate(-" + bb.width / 2 + ",-" + bb.height / 2 + ") \
+        scale(" + 600 / bb.width + "," + 250 / bb.height + ") \
+        translate(" + bb.width / 2 + "," + bb.height / 2 + ")");
+  }
+  else{
+    console.log("why in gods name is this null")
+  }
+</script>
 
 <style scoped>
 #track-container{
