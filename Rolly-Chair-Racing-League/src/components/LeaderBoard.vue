@@ -10,7 +10,7 @@ const props =defineProps({
         <div  id="leaderboard-flexbox" >
             <div v-for="(player, index) in players" class="box" :style="'background-color:' + player.color">
                 <p>
-                {{ player.name }}
+                <b>{{ index+1 }}.  </b>{{ player.name }}
                 </p>
             </div>
         </div>

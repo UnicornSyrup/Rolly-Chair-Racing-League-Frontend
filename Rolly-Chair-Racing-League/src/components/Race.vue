@@ -32,7 +32,7 @@ let tracks = [
 
 <template>
     <div id="race-container">
-        <Track :players="players" :track="tracks[2]"></Track>
+        <Track :players="players" :track="tracks[1]"></Track>
         <LeaderBoard :players="players"></LeaderBoard>
         <Log></Log>
     </div>
