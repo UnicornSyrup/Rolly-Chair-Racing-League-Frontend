@@ -75,7 +75,7 @@ const props =defineProps({
     :dur="'50' + 's'"
     :keyPoints="player.distances.toString().replace(/,/g,';')"
     :keyTimes="player.times.toString().replace(/,/g,';') "
-    repeatCount="1"
+    repeatCount="100"
     :path="track" />
 </circle>
 </svg>

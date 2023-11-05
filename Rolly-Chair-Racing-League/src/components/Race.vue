@@ -35,38 +35,40 @@ let tracks = [
 const user = await loginApiKey("rS6YEkfv9oSL0xWR7eK8kUG6CpiIBN3YYQrscvsyyxC3e8pTYU13MhD0nzxnOE7Z"); // add previously generated API key
 const mongo = app.currentUser.mongoClient("Cluster0");
 const collection = mongo.db("Cluster0").collection("races");
-let players = ref([]);
+var players = ref([]);
 
 
-// setInterval(async () => {
-const race = await collection.findOne();
-console.log(race);
-console.log(scaledTimes);
+const loadRace = async function (){
+    players.value = [];
+    const race = await collection.findOne();
+    console.log(race);
+    console.log(scaledTimes);
 
-let maxDist = Math.max(...race.timesteps[race.timesteps.length - 1].positions);
-console.log(maxDist)
+    let maxDist = Math.max(...race.timesteps[race.timesteps.length - 1].positions);
+    console.log(maxDist)
 
 
-race.players.forEach(player => {
-    let playerObj = {};
-    let id = player.id || 0;
+    race.players.forEach(player => {
+        let playerObj = {};
+        let id = player.id || 0;
 
-    console.log(id)
+        console.log(id)
 
-    playerObj.name = player.name || null;
-    playerObj.times = scaledTimes;
-    let distances = [];
-    race.timesteps.forEach(time => {
-        distances.push(time.positions[id] / maxDist)
-    })
-    console.log(distances);
-    playerObj.distances = distances;
-    playerObj.color = "#" + Math.floor(Math.random()*16777215).toString(16);
+        playerObj.name = player.name || null;
+        playerObj.times = scaledTimes;
+        let distances = [];
+        race.timesteps.forEach(time => {
+            distances.push(time.positions[id] / maxDist)
+        })
+        console.log(distances);
+        playerObj.distances = distances;
+        playerObj.color = "#" + Math.floor(Math.random()*16777215).toString(16);
 
-    players.value.push(playerObj);
-});
-
-// }, 600000);
+        players.value.push(playerObj);
+    });
+}
+loadRace();
+setInterval(loadRace, 60000);
 
 
 // var i = 0;
