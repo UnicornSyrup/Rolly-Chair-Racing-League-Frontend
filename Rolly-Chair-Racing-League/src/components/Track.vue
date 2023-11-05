@@ -15,7 +15,7 @@
         repeatCount="indefinite"
         path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
     </circle>
-        <circle r="5" fill="blue">
+    <circle r="5" fill="blue">
         <animateMotion
         dur="10s"
         keyPoints="0;0.5;1"

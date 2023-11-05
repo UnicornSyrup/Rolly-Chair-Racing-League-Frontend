@@ -1,12 +1,14 @@
 <script setup>
 import Race from"./components/Race.vue"
 import Log from "./components/Log.vue"
+import LeaderBoard from "./components/LeaderBoard.vue"
 </script>
 
 <template>
   <header>
     <Race></Race>
     <Log></Log>
+    <LeaderBoard></LeaderBoard>
   </header>
 </template>
 
