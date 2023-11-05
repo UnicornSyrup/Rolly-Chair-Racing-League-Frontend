@@ -29,9 +29,9 @@
 
 <style scoped>
 #track-container{
-    height: 80vh;
-    width: 50vw;
+    height: 100%;
+    width: 100%;
     border-color: white;
-    background: dodgerblue;
+
 }
 </style>

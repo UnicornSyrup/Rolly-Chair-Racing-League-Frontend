@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div id="log-container">
+    <div id="log-container" class="main-component">
         <div class="box" id="id1">
         <p>
         line 1
@@ -18,10 +18,8 @@
 </template>
 
 <style scoped>
-#track-container{
+#log-container{
     height: 80vh;
-    width: 40vw;
-    border-color: white;
-    background: dodgerblue;
+    width: 35vw;
 }
 </style>

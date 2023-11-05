@@ -5,15 +5,15 @@ import Track from './Track.vue';
 
 
 <template>
-    <div id="race-container">
+    <div id="race-container" class="main-component">
         <Track></Track>
     </div>
 </template>
 
 <style scoped lang="scss">
  #race-container{
-    width:300px;
-    height: 400px;
+    width: 50vw;
+    height: 80vh;
     // background: #0088ee;
 } 
 </style>
