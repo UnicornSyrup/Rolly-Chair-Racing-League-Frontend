@@ -122,6 +122,17 @@ setInterval(loadRace, 60000);
 <template>
     <div id="race-container">
         <Track :players="players" :track="tracks[2]"></Track>
+        <div id="donors">
+            <p>Joshua Holland</p>
+        <p>mishal</p>
+        <p>Jasper fam</p>
+        <p>John Fish (Creator of Fish)</p>
+        <p>brianna</p>
+        <p>woofles</p>
+
+        <p>Michael Serrano</p>
+        </div>
+
         <LeaderBoard :players="players"></LeaderBoard>
         <!-- <Log></Log> -->
     </div>
@@ -138,6 +149,15 @@ setInterval(loadRace, 60000);
 //   border: 10px solid black;
 //   padding: 20px;
 // }
+#donors{
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    p{
+        color: white;
+        margin-top:1rem;
+    }
+}
 </style>
 
 <style>
