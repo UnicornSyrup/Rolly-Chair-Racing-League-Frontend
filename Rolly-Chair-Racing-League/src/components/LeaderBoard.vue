@@ -50,4 +50,8 @@
     color: white;
 }
 
+.leaderboard-flexbox :nth-child(1) { order: 2; }
+.leaderboard-flexbox :nth-child(2) { order: 3; }
+.leaderboard-flexbox :nth-child(3) { order: 1; }
+
 </style>
